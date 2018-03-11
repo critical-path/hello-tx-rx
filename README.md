@@ -8,6 +8,7 @@ HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), s
 
 ## Files
 
+__Python__:
 - lib_config.py - Python library for configurator
 - lib_log.py - Python library for log analyzer
 - lib_rx.py - Python library for receiver
@@ -17,13 +18,16 @@ HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), s
 - app_rx.py - Python application for receiver
 - app_tx.py - Python application for sender
 
+__systemd__:
 - hello_firewall.service - systemd unit configuration for firewall opener (to poke a hole in the firewall)
 - hello_rx.service - systemd unit configuration for receiver
 - hello_tx.service - systemd unit configuration for sender
 
+__text__:
 - config.txt - configuration file
 - log.txt - log file
 
+__bash__:
 - get_status.sh - bash script to get status of hosts
 - open_firewall.sh - bash script to open firewall
 - set_up.sh - bash script to set everything up
