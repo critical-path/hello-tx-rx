@@ -4,7 +4,7 @@ With HelloSender and HelloReceiver, hosts on a single subnet exchange UDP datagr
 
 ## Dependencies
 
-HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), systemd files (.service), and regular old text files (.txt).  The Python files require Python 3.x.  The bash and systemd files require Linux environments that support bash and systemd.  The text files require nothing.
+HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), systemd files (.service), and regular old text files (.txt).  The Python files require Python 3.x.  The bash and systemd files require Linux environments that support bash and systemd (for example, CentOS 7).  The text files require nothing.
 
 ## Files
 
