@@ -84,7 +84,7 @@ chmod +x ./set_up.sh
 
 ## Using systemd (the boring stuff)
 
-If everything goes as planned, systemd will run the HelloSender service, HelloReceiver service, and HelloFirewallOpener service whenever a configured host boots up.  The standard systemd commands apply.
+If everything goes as planned, systemd will run the HelloSender service, the HelloReceiver service, and the HelloFirewallOpener service whenever a configured host boots up.  The standard systemd commands are available.
 
 ```
 systemctl status hello_rx hello_tx hello_firewall
@@ -95,9 +95,16 @@ systemctl restart hello_rx hello_tx hello_firewall
 
 ## Using HelloSender, HelloReceiver, and their friend, HelloLogAnalyzer (the fun stuff)
 
-As long as the HelloSender service and the HelloReceiver service are running, configured hosts attempt to exchange UDP datagrams with each other.  When they receive datagrams, they write them to a log file.  Using HelloLogAnalyzer, they evaluate whether they have received datagrams within the expected timeframe (2 * the number of seconds between sending each datagram * the number of configured hosts = 2540 seconds, by default).  To see what the log says about each host, run get_status.sh.
+As long as the HelloSender service and the HelloReceiver service are running, configured hosts attempt to exchange UDP datagrams with each other.  When they receive datagrams, they write them to a log file.  Using HelloLogAnalyzer, they evaluate whether they have received datagrams within the expected timeframe (2 * the number of seconds between sending each datagram * the number of configured hosts).  
+
+To see what the log says about each host, run get_status.sh.  With luck, the output will be positive!
 
 ```
 ./get_status.sh
 ```
 
+192.168.1.1 [ ok ]
+192.168.1.2 [ ok ]
+192.168.1.3 [ ok ]
+...
+192.168.1.254 [ok]
