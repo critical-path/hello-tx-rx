@@ -102,9 +102,9 @@ To see what the log says about each host, run get_status.sh.
 ```
 ./get_status.sh
 
-192.168.1.1 [ ok ]
-192.168.1.2 [ ok ]
-192.168.1.3 [ not ok ]
+192.168.1.1 [ hello ]
+192.168.1.2 [ hello ]
+192.168.1.3 [ no hello ]
 ...
-192.168.1.254 [ ok ]
+192.168.1.254 [ hello ]
 ```
