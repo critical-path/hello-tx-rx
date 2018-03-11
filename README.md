@@ -2,36 +2,31 @@
 
 With HelloSender and HelloReceiver, hosts on a single subnet exchange UDP datagrams on a continuous basis, making it easy to determine when they can or cannot communicate with each other.
 
-
 ## Dependencies
 
-HelloSender and HelloReceiver consist principally of Python files (.py), bash files (.sh), and systemd files (.service).
-
-The Python files require Python 3.x.  The bash and systemd files likely work in many Linux environments, but we have used them with CentOS 7.
-
+HelloSender and HelloReceiver consist principally of Python files (.py), bash files (.sh), and systemd files (.service).  The Python files require Python 3.x.  The bash and systemd files likely work in many Linux environments, but we have used them with CentOS 7.
 
 ## Files
 
-lib_config.py - library for configurator
-lib_log.py - library for log analyzer
-lib_rx.py - library for receiver
-lib_tx.py - library for sender
+- lib_config.py - library for configurator
+- lib_log.py - library for log analyzer
+- lib_rx.py - library for receiver
+- lib_tx.py - library for sender
 
-app_log.py - application for log analyzer
-app_rx.py - application for receiver
-app_tx.py - application for sender
+- app_log.py - application for log analyzer
+- app_rx.py - application for receiver
+- app_tx.py - application for sender
 
-hello_firewall.service - systemd unit configuration for firewall opener (to poke a hole in the firewall)
-hello_rx.service - systemd unit configuration for receiver
-hello_tx.service - systemd unit configuration for sender
+- hello_firewall.service - systemd unit configuration for firewall opener (to poke a hole in the firewall)
+- hello_rx.service - systemd unit configuration for receiver
+- hello_tx.service - systemd unit configuration for sender
 
-config.txt - configuration file
-log.txt - log file
+- config.txt - configuration file
+- log.txt - log file
 
-get_status.sh - script to get status of hosts
-open_firewall.sh - script to open firewall
-set_up.sh - script to set everything up
-
+- get_status.sh - script to get status of hosts
+- open_firewall.sh - script to open firewall
+- set_up.sh - script to set everything up
 
 ## Installing HelloSender and HelloReceiver
 
@@ -87,7 +82,6 @@ chmod +x ./set_up.sh
 
 10. Repeat this process for every host, making sure that configuration settings are consistent (except for local_host_id, which should be unique to each host).
 
-
 ## Using systemd (the boring stuff)
 
 If everything goes as planned, systemd will run the HelloSender service, HelloReceiver service, and HelloFirewallOpener service whenever a configured host boots up.  The standard systemd commands apply.
@@ -99,10 +93,9 @@ systemctl start hello_rx hello_tx hello_firewall
 systemctl restart hello_rx hello_tx hello_firewall
 ```
 
-
 ## Using HelloSender, HelloReceiver, and their friend, HelloLogAnalyzer (the fun stuff)
 
-As long as the HelloSender service and the HelloReceiver service are running, configured hosts will attempt to exchange UDP datagrams with each other.  When they receive datagrams, they write them to a log file.  Using HelloLogAnalyzer, they evaluate whether they have received datagrams within the expected timeframe (2 * the number of seconds between sending each datagram * the number of configured hosts = 2540 seconds, by default).  To see what the log says about each host, run get_status.sh.
+As long as the HelloSender service and the HelloReceiver service are running, configured hosts attempt to exchange UDP datagrams with each other.  When they receive datagrams, they write them to a log file.  Using HelloLogAnalyzer, they evaluate whether they have received datagrams within the expected timeframe (2 * the number of seconds between sending each datagram * the number of configured hosts = 2540 seconds, by default).  To see what the log says about each host, run get_status.sh.
 
 ```
 ./get_status.sh
