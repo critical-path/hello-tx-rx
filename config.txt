@@ -1,0 +1,10 @@
+network_id=192.168.1.0
+first_host_id=1
+last_host_id=254
+local_host_id=1
+port=65000
+frequency=5
+text=Hello
+encoding=utf8
+log_file=log.txt
+
