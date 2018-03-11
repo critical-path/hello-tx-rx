@@ -82,7 +82,7 @@ chmod +x ./set_up.sh
 
 10. Repeat this process for every host, making sure that configuration settings are consistent (except for local_host_id, which should be unique to each host).
 
-## Using systemd (the boring stuff)
+## Using systemd
 
 If everything goes as planned, systemd will run the HelloSender service, the HelloReceiver service, and the HelloFirewallOpener service whenever a configured host boots up.  The standard systemd commands are available.
 
@@ -93,7 +93,7 @@ systemctl start hello_rx hello_tx hello_firewall
 systemctl restart hello_rx hello_tx hello_firewall
 ```
 
-## Using HelloSender, HelloReceiver, and their friend, HelloLogAnalyzer (the fun stuff)
+## Using HelloSender, HelloReceiver, and HelloLogAnalyzer
 
 As long as the HelloSender service and the HelloReceiver service are running, configured hosts attempt to exchange UDP datagrams with each other.  When they receive datagrams, they write them to a log file.  Using HelloLogAnalyzer, they evaluate whether they have received datagrams within the expected timeframe (2 * the number of seconds between sending each datagram * the number of configured hosts).  
 
