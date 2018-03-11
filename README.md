@@ -60,7 +60,7 @@ HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), s
    - log_file is the name of the log file (by default, log.txt).
    
 
-   Putting all of this together, the default configuration is for the local host (192.168.1.1) to use HelloReceiver to listen on UDP port 65000 for UDP datagrams from itself and remote hosts 192.168.1.2-192.168.1.254.  The local host will also use HelloSender to send UDP datagrams to itself and the same set of remote hosts.  The local host will send datagrams at a rate of one every five seconds, meaning that it will take 1270 seconds, or just over 21 minutes, to say "Hello" to each remote host.  Easy, right? 
+   Putting all of this together, the default configuration is for the local host (192.168.1.1) to use HelloReceiver to listen on UDP port 65000 for UDP datagrams from itself and remote hosts 192.168.1.2-192.168.1.254.  The local host will also use HelloSender to send UDP datagrams to itself and the same set of remote hosts.  The local host will send datagrams at a rate of one every five seconds, meaning that it will take 1270 seconds, or just over 21 minutes, to say "Hello" to each remote host. 
 
 5. Open open_firewall.sh in your favorite text editor.
 
