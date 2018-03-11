@@ -112,3 +112,7 @@ To see what the log says about each host, run get_status.sh.
 ...
 192.168.1.254 [ hello ]
 ```
+
+## What's the point?
+
+Maybe this has some utility in the Internet of Things.
