@@ -4,18 +4,18 @@ With HelloSender and HelloReceiver, hosts on a single subnet exchange UDP datagr
 
 ## Dependencies
 
-HelloSender and HelloReceiver consist principally of Python files (.py), bash files (.sh), and systemd files (.service).  The Python files require Python 3.x.  The bash and systemd files likely work in many Linux environments, but we have used them with CentOS 7.
+HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), systemd files (.service), and regular old text files (.txt).  The Python files require Python 3.x.  The bash and systemd files require Linux environments that support bash and systemd.  The text files require nothing.
 
 ## Files
 
-- lib_config.py - library for configurator
-- lib_log.py - library for log analyzer
-- lib_rx.py - library for receiver
-- lib_tx.py - library for sender
+- lib_config.py - Python library for configurator
+- lib_log.py - Python library for log analyzer
+- lib_rx.py - Python library for receiver
+- lib_tx.py - Python library for sender
 
-- app_log.py - application for log analyzer
-- app_rx.py - application for receiver
-- app_tx.py - application for sender
+- app_log.py - Python application for log analyzer
+- app_rx.py - Python application for receiver
+- app_tx.py - Python application for sender
 
 - hello_firewall.service - systemd unit configuration for firewall opener (to poke a hole in the firewall)
 - hello_rx.service - systemd unit configuration for receiver
@@ -24,9 +24,9 @@ HelloSender and HelloReceiver consist principally of Python files (.py), bash fi
 - config.txt - configuration file
 - log.txt - log file
 
-- get_status.sh - script to get status of hosts
-- open_firewall.sh - script to open firewall
-- set_up.sh - script to set everything up
+- get_status.sh - bash script to get status of hosts
+- open_firewall.sh - bash script to open firewall
+- set_up.sh - bash script to set everything up
 
 ## Installing HelloSender and HelloReceiver
 
