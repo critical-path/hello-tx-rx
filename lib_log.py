@@ -109,9 +109,9 @@ class HelloLogAnalyzer(object):
       if status == "clock_not_synchronized":
         print("\033[38;5;166m" + "Clock not synchronized" + "\033[000m")
       elif status == True:
-        print("\033[000m" + host_address + " [\033[38;5;154m ok \033[000m]")
+        print("\033[000m" + host_address + " [\033[38;5;154m hello \033[000m]")
       elif status == False:
-        print("\033[000m" + host_address + " [\033[38;5;160m not ok \033[000m]")
+        print("\033[000m" + host_address + " [\033[38;5;160m no hello \033[000m]")
 
   #Determine whether hosts are alive
 
