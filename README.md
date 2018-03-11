@@ -97,14 +97,13 @@ systemctl restart hello_rx hello_tx hello_firewall
 
 As long as the HelloSender service and the HelloReceiver service are running, configured hosts attempt to exchange UDP datagrams with each other.  When they receive datagrams, they write them to a log file.  Using HelloLogAnalyzer, they evaluate whether they have received datagrams within the expected timeframe (2 * the number of seconds between sending each datagram * the number of configured hosts).  
 
-To see what the log says about each host, run get_status.sh.  With luck, the output will be positive!
+To see what the log says about each host, run get_status.sh.
 
 ```
 ./get_status.sh
-```
 
 192.168.1.1 [ ok ]
 192.168.1.2 [ ok ]
-192.168.1.3 [ ok ]
 ...
-192.168.1.254 [ok]
+192.168.1.254 [ ok ]
+```
