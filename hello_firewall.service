@@ -1,0 +1,13 @@
+[Unit]
+Description=HelloFirewallOpener
+After=hello_tx.service
+
+[Service]
+WorkingDirectory=$HOME/hello/
+ExecStart=/usr/bin/bash $HOME/hello/open_firewall.sh
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+
