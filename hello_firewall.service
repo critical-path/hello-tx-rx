@@ -4,7 +4,7 @@ After=hello_tx.service
 
 [Service]
 WorkingDirectory=$HOME/hello/
-ExecStart=/usr/bin/bash $HOME/hello/open_firewall.sh
+ExecStart=/usr/bin/bash /home/$(id -un)/hello/open_firewall.sh
 User=root
 Group=root
 
