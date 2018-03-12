@@ -4,8 +4,8 @@ After=hello_rx.service
 
 [Service]
 WorkingDirectory=$HOME/hello/tx/
-ExecStart=/usr/bin/python3 -B $HOME/hello/tx/app_tx.py
-ExecStop=pkill -f ^/usr/bin/python3\ -B\ $HOME/hello/tx/app_tx.py$
+ExecStart=/usr/bin/python3 -B /home/$(id -un)/hello/tx/app_tx.py
+ExecStop=pkill -f ^/usr/bin/python3\ -B\ /home/\$(id\ -un)/hello/tx/app_tx.py$
 
 [Install]
 WantedBy=multi-user.target
