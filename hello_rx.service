@@ -3,7 +3,7 @@ Description=HelloReceiver
 After=network.target
 
 [Service]
-WorkingDirectory=$HOME/hello/rx/
+WorkingDirectory=/home/$(id -un)/hello/rx
 ExecStart=/usr/bin/python3 -B /home/$(id -un)/hello/rx/app_rx.py
 ExecStop=pkill -f ^/usr/bin/python3\ -B\ /home/\$(id\ -un)/hello/rx/app_rx.py$
 
