@@ -3,7 +3,7 @@ Description=HelloFirewallOpener
 After=hello_tx.service
 
 [Service]
-WorkingDirectory=$HOME/hello/
+WorkingDirectory=/home/$(id -un)/hello/
 ExecStart=/usr/bin/bash /home/$(id -un)/hello/open_firewall.sh
 User=root
 Group=root
