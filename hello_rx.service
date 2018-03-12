@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 WorkingDirectory=$HOME/hello/rx/
-ExecStart=/usr/bin/python3 -B $HOME/hello/rx/app_rx.py
-ExecStop=pkill -f ^/usr/bin/python3\ -B\ $HOME/hello/rx/app_rx.py$
+ExecStart=/usr/bin/python3 -B /home/$(id -un)/hello/rx/app_rx.py
+ExecStop=pkill -f ^/usr/bin/python3\ -B\ /home/\$(id\ -un)/hello/rx/app_rx.py$
 
 [Install]
 WantedBy=multi-user.target
