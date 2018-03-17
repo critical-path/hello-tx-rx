@@ -3,9 +3,9 @@ Description=HelloSender
 After=hello_rx.service
 
 [Service]
-WorkingDirectory=/home/$(id -un)/hello/tx
-ExecStart=/usr/bin/python3 -B /home/$(id -un)/hello/tx/app_tx.py
-ExecStop=pkill -f ^/usr/bin/python3\ -B\ /home/\$(id\ -un)/hello/tx/app_tx.py$
+WorkingDirectory=/var/lib/hello-tx-rx/tx
+ExecStart=/usr/bin/python3 -B /var/lib/hello-tx-rx/tx/app_tx.py
+ExecStop=pkill app_tx.py
 
 [Install]
 WantedBy=multi-user.target

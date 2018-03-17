@@ -3,9 +3,9 @@ Description=HelloReceiver
 After=network.target
 
 [Service]
-WorkingDirectory=/home/$(id -un)/hello/rx
-ExecStart=/usr/bin/python3 -B /home/$(id -un)/hello/rx/app_rx.py
-ExecStop=pkill -f ^/usr/bin/python3\ -B\ /home/\$(id\ -un)/hello/rx/app_rx.py$
+WorkingDirectory=/var/lib/hello-tx-rx/rx
+ExecStart=/usr/bin/python3 -B /var/lib/hello-tx-rx/rx/app_rx.py
+ExecStop=pkill app_rx.py
 
 [Install]
 WantedBy=multi-user.target

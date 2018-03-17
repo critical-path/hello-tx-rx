@@ -91,10 +91,10 @@ chmod +x ./set_up.sh
 If everything goes as planned, systemd will run the HelloSender service, the HelloReceiver service, and the HelloFirewallOpener service whenever a configured host boots up.  The standard systemd commands are available.
 
 ```
-systemctl status hello_rx hello_tx hello_firewall
-systemctl stop hello_rx hello_rx hello_firewall
-systemctl start hello_rx hello_tx hello_firewall
-systemctl restart hello_rx hello_tx hello_firewall
+sudo systemctl status hello_rx hello_tx hello_firewall
+sudo systemctl stop hello_rx hello_rx hello_firewall
+sudo systemctl start hello_rx hello_tx hello_firewall
+sudo systemctl restart hello_rx hello_tx hello_firewall
 ```
 
 ## Using HelloSender, HelloReceiver, and HelloLogAnalyzer
@@ -104,7 +104,7 @@ As long as the HelloSender service and the HelloReceiver service are running, co
 To see what the log says about each host, run get_status.sh.
 
 ```
-./get_status.sh
+/var/lib/hello-tx-rx/get_status.sh
 
 192.168.1.1 [ hello ]
 192.168.1.2 [ hello ]
@@ -112,6 +112,10 @@ To see what the log says about each host, run get_status.sh.
 ...
 192.168.1.254 [ hello ]
 ```
+
+## Thoughts on getting started
+
+To get a sense of how HelloSender and HelloReceiver work, configure them to send and receive UDP datagrams on the loopback address.  Set network_id to 127.0.0.0, first_host_id to 1, last_host_id to 1, and local_host_id to 1.  Update open_firewall.sh accordingly.
 
 ## What's the point?
 
