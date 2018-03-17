@@ -12,7 +12,7 @@ echo "edit config.txt before running this script..."
 echo "making user and group named hello-tx-rx..."
 sudo useradd -r hello-tx-rx -d ${main_directory} -s /usr/sbin/nologin
 
-echo "adding your user to group named hello-tx-rx..."
+echo "adding you to group named hello-tx-rx..."
 sudo usermod $(id -un) -aG hello-tx-rx
 
 echo "making main directory..."
@@ -26,10 +26,15 @@ sudo mkdir ${tx_subdirectory}
 sudo mkdir ${systemd_subdirectory}
 
 echo "changing file modes..."
-chmod +x get_status.sh
 chmod +x open_firewall.sh
+chmod +x get_status.sh
+chmod +x tear_down.sh
 
-echo "copying files to sub-directories..."
+echo "copying files to directories..."
+sudo cp open_firewall.sh ${main_directory}
+sudo cp get_status.sh ${main_directory}
+sudo cp set_up.sh ${main_directory}
+sudo cp tear_down.sh ${main_directory}
 sudo cp config.txt ${config_subdirectory}
 sudo cp lib_config.py ${config_subdirectory}
 sudo cp lib_log.py ${log_subdirectory}
@@ -42,8 +47,6 @@ sudo cp app_tx.py ${tx_subdirectory}
 sudo cp hello_rx.service ${systemd_subdirectory}
 sudo cp hello_tx.service ${systemd_subdirectory}
 sudo cp hello_firewall.service ${systemd_subdirectory}
-sudo cp open_firewall.sh ${main_directory}
-sudo cp get_status.sh ${main_directory}
 
 echo "making symbolic links..."
 sudo ln -s ${config_subdirectory}/config.txt ${log_subdirectory}
@@ -75,5 +78,5 @@ sudo systemctl start hello_rx.service
 sudo systemctl start hello_tx.service
 sudo systemctl start hello_firewall.service
 
-echo "if you experienced any error when starting the services, then you probably forgot to edit config.txt before running this script..."
+echo "if you experienced any errors in starting the services, then you may have forgotten to edit config.txt before running this script..."
 

@@ -30,7 +30,8 @@ __text__:
 __bash__:
 - get_status.sh - script to get status of hosts
 - open_firewall.sh - script to open firewall
-- set_up.sh - script to set everything up
+- set_up.sh - script to set everything up (install)
+- tear_down.sh - script to tear everything down (unintstall)
 
 ## Installing HelloSender and HelloReceiver
 
