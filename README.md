@@ -9,19 +9,19 @@ HelloSender and HelloReceiver consist of Python files (.py), bash files (.sh), s
 ## Files
 
 __Python__:
-- lib_config.py - library for configurator
-- lib_log.py - library for log analyzer
-- lib_rx.py - library for receiver
-- lib_tx.py - library for sender
+- lib_config.py - library for HelloConfigurator
+- lib_log.py - library for HelloLogAnalyzer
+- lib_rx.py - library for HelloReceiver
+- lib_tx.py - library for HelloSender
 
-- app_log.py - application for log analyzer
-- app_rx.py - application for receiver
-- app_tx.py - application for sender
+- app_log.py - application for HelloLogAnalyzer
+- app_rx.py - application for HelloReceiver
+- app_tx.py - application for HelloSender
 
 __systemd__:
 - hello_firewall.service - unit configuration for firewall opener (to poke a hole in the firewall)
-- hello_rx.service - unit configuration for receiver
-- hello_tx.service - unit configuration for sender
+- hello_rx.service - unit configuration for HelloReceiver
+- hello_tx.service - unit configuration for HelloSender
 
 __text__:
 - config.txt - configuration file
@@ -31,7 +31,7 @@ __bash__:
 - get_status.sh - script to get status of hosts
 - open_firewall.sh - script to open firewall
 - set_up.sh - script to set everything up (install)
-- tear_down.sh - script to tear everything down (unintstall)
+- tear_down.sh - script to tear everything down (uninstall)
 
 ## Installing HelloSender and HelloReceiver
 
@@ -121,3 +121,4 @@ To get a sense of how HelloSender and HelloReceiver work, configure them to send
 ## What's the point?
 
 Maybe this has some utility in the Internet of Things.
+
