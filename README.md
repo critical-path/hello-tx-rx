@@ -116,7 +116,7 @@ To see what the log says about each host, run get_status.sh.
 
 ## Thoughts on getting started
 
-To get a sense of how HelloSender and HelloReceiver work, configure them to send and receive UDP datagrams on the loopback address.  Set network_id to 127.0.0.0, first_host_id to 1, last_host_id to 1, and local_host_id to 1.  Update open_firewall.sh accordingly.
+To get a sense of how HelloSender and HelloReceiver work, configure them to send and receive UDP datagrams on the loopback address.  In config.txt, set network_id to 127.0.0.0, first_host_id to 1, last_host_id to 1, and local_host_id to 1.  Then, in open_firewall.sh, set the source and destination addresses to 127.0.0.1/32.  
 
 ## What's the point?
 
