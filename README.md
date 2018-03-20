@@ -35,6 +35,8 @@ __bash__:
 
 ## Installing HelloSender and HelloReceiver
 
+To install HelloSender and HelloReceiver, follow these instructions.  They work for CentOS 7 __as long as it is not running inside of a container__. They may work for other distributions of Linux, but the directory for systemd unit configuration files may differ from the one specified in the setup script.
+
 1. Download this repository.
 
 2. Extract the contents.
