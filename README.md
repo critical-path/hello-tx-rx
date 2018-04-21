@@ -13,7 +13,6 @@ __Python__:
 - lib_log.py - library for HelloLogAnalyzer
 - lib_rx.py - library for HelloReceiver
 - lib_tx.py - library for HelloSender
-
 - app_log.py - application for HelloLogAnalyzer
 - app_rx.py - application for HelloReceiver
 - app_tx.py - application for HelloSender
